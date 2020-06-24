@@ -2,10 +2,10 @@ const mongodb = require('mongodb');
 const MongoClient = mongodb.MongoClient;
 
 let _db;
-
+const connectionString = process.env.DatabaseConnectionString;//mogo connection string
 const mongoConnect = callback => {
   MongoClient.connect(
-    'mongodb+srv://appuser:Ga9fWtTomY2Pj2ev@cluster0-4ac1j.mongodb.net/shop?retryWrites=true&w=majority'
+    connectionString
   )
     .then(client => {
       console.log('Connected!');
